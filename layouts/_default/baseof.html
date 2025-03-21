@@ -3,15 +3,11 @@
   lang="{{ or site.Language.LanguageCode }}"
   dir="{{ or site.Language.LanguageDirection `ltr` }}"
 >
-  <head>
-    {{ partial "head" . }}
-  </head>
+  {{ partial "head" . }}
   <body>
     <main>
       {{ block "main" . }}{{ end }}
     </main>
-    <footer>
-      {{ partial "footer" . }}
-    </footer>
+    {{ partial "footer" . }}
   </body>
 </html>
