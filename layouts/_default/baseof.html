@@ -4,9 +4,14 @@
   dir="{{ or site.Language.LanguageDirection `ltr` }}"
 >
   <head>
-    {{ partial "head.html" . }}
+    {{ partial "head" . }}
   </head>
   <body>
-    {{ block "main" . }}{{ end }}
+    <main>
+      {{ block "main" . }}{{ end }}
+    </main>
+    <footer>
+      {{ partial "footer" . }}
+    </footer>
   </body>
 </html>
