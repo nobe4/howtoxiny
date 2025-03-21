@@ -1,9 +1,15 @@
-<div>
-  {{ with .GitInfo }}
-    Last updated:
-    <a href="{{ $.Site.Params.repo }}/commit/{{ .Hash }}">
-      {{ .CommitDate.Format "2006-02-01" }}
-      ({{ .AbbreviatedHash }})
-    </a>
-  {{ end }}
-</div>
+<footer>
+  <div>
+    {{ with .File }}
+      {{ $href := printf "%s/blob/main/content/%s/%s" $.Site.Params.repo $.Lang .Path }}
+      <a href="{{ $href }}"> View file </a>
+    {{ end }}
+    {{ with .GitInfo }}
+      &nbsp;| Last updated:
+      <a href="{{ $.Site.Params.repo }}/commit/{{ .Hash }}">
+        {{ .CommitDate.Format "2006-02-01" }}
+        ({{ .AbbreviatedHash }})
+      </a>
+    {{ end }}
+  </div>
+</footer>
