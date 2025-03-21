@@ -13,7 +13,7 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  build:
+  lint:
     runs-on: ubuntu-latest
 
     steps:
