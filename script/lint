@@ -1,1 +1,3 @@
-prettier -w content layouts
+#!/usr/bin/env bash
+
+npx prettier --check .
