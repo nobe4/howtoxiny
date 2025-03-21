@@ -1,0 +1,8 @@
+<h2>Natural Languages</h2>
+<ul>
+  {{ range $.Site.Home.AllTranslations }}
+    <li>
+      <a href="{{ .RelPermalink }}">{{ .Language.LanguageName }}</a>
+    </li>
+  {{ end }}
+</ul>

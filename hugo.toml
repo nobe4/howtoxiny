@@ -1,0 +1,46 @@
+baseURL = 'https://howtoxiny.org/'
+title = 'How to X in Y'
+
+# TODO: use additional config file in config/
+# Using Yaml would probably be a good idea as well
+defaultContentLanguage = "en"
+defaultContentLanguageInSubdir = true
+
+[languages]
+[languages.en]
+    languageName = "English"
+    contentDir = "content/en"
+[languages.fr]
+    languageName = "Français"
+    contentDir = "content/fr"
+
+[[cascade]]
+    [cascade.params]
+        languages = ["go"]
+    [cascade.target]
+        path = '**/go/**'
+        kind = 'page'
+[[cascade]]
+    [cascade.params]
+        languages = ["python"]
+    [cascade.target]
+        path = '**/python/**'
+        kind = 'page'
+
+[[cascade]]
+    [cascade.params]
+        examples = ["list_reverse"]
+    [cascade.target]
+        path = '**/list_reverse'
+        kind = 'page'
+[[cascade]]
+    [cascade.params]
+        examples = ["string_match_prefix"]
+    [cascade.target]
+        path = '**/string_match_prefix'
+        kind = 'page'
+
+[taxonomies]
+language = "languages"
+example = "examples"
+

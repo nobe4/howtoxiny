@@ -1,0 +1,9 @@
+{{ with (index (.GetTerms "examples") 0) }}
+  {{ .Title }}
+{{ end }}
+
+{{ T "in_language" }}
+
+{{ with (index (.GetTerms "languages") 0) }}
+  {{ .Title }}
+{{ end }}
