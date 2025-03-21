@@ -8,6 +8,9 @@ enableGitInfo = true
 defaultContentLanguage = "en"
 defaultContentLanguageInSubdir = true
 
+[params]
+repo = "https://github.com/nobe4/howtoxiny"
+
 [languages]
 [languages.en]
     languageName = "English"
