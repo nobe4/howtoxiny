@@ -1,6 +1,8 @@
 baseURL = 'https://howtoxiny.org/'
 title = 'How to X in Y'
 
+enableGitInfo = true
+
 # TODO: use additional config file in config/
 # Using Yaml would probably be a good idea as well
 defaultContentLanguage = "en"
