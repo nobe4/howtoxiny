@@ -2,7 +2,7 @@
   Last updated:
   {{ .Lastmod.Format "2006-02-01" }}{{ with .GitInfo }}
     :
-    <a href="{{ $.Site.Params.ghrepo }}commit/{{ .Hash }}">
+    <a href="{{ $.Site.Params.repo }}commit/{{ .Hash }}">
       {{ .AbbreviatedHash }}
     </a>
   {{ end }}
