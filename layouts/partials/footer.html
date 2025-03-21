@@ -1,7 +1,7 @@
 <div>
   {{ with .GitInfo }}
     Last updated:
-    <a href="{{ $.Site.Params.repo }}commit/{{ .Hash }}">
+    <a href="{{ $.Site.Params.repo }}/commit/{{ .Hash }}">
       {{ .CommitDate.Format "2006-02-01" }}
       ({{ .AbbreviatedHash }})
     </a>
