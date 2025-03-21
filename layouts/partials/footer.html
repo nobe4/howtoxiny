@@ -1,9 +1,9 @@
 <div>
-  Last updated:
-  {{ .Lastmod.Format "2006-02-01" }}{{ with .GitInfo }}
-    :
+  {{ with .GitInfo }}
+    Last updated:
     <a href="{{ $.Site.Params.repo }}commit/{{ .Hash }}">
-      {{ .AbbreviatedHash }}
+      {{ .CommitDate.Format "2006-02-01" }}
+      ({{ .AbbreviatedHash }})
     </a>
   {{ end }}
 </div>
