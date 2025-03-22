@@ -26,5 +26,5 @@ repo = "https://github.com/nobe4/howtoxiny"
     contentDir = "content/de"
 
 [taxonomies]
-language = "languages"
-example = "examples"
+y = "y"
+x = "x"

@@ -1,8 +1,8 @@
 {{ define "main" }}
   <ul>
-    {{ $tax := "examples" }}
-    {{ if eq .Data.Plural "examples" }}
-      {{ $tax = "languages" }}
+    {{ $tax := "x" }}
+    {{ if eq .Data.Plural "x" }}
+      {{ $tax = "y" }}
     {{ end }}
 
     {{ range .Pages }}

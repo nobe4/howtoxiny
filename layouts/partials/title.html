@@ -1,11 +1,11 @@
 {{ if eq .Kind "page" }}
-  {{ with (index (.GetTerms "examples") 0) }}
+  {{ with (index (.GetTerms "x") 0) }}
     {{ .Title }}
   {{ end }}
 
   {{ T "in_language" }}
 
-  {{ with (index (.GetTerms "languages") 0) }}
+  {{ with (index (.GetTerms "y") 0) }}
     {{ .Title }}
   {{ end }}
 {{ else if eq .Kind "home" }}
