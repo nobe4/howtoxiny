@@ -1,8 +1,10 @@
 {{ define "main" }}
   <section>
+    <h2><a href="{{ .RelRef (dict "path" "x") }}">X</a></h2>
     {{ partial "taxonomy/tree" (dict "context" . "root" "x") }}
   </section>
   <section>
+    <h2><a href="{{ .RelRef (dict "path" "y") }}">Y</a></h2>
     {{ partial "taxonomy/tree" (dict "context" . "root" "y") }}
   </section>
 {{ end }}
