@@ -1,12 +1,16 @@
 {{ if eq .Kind "page" }}
   {{ with (index (.GetTerms "x") 0) }}
-    {{ .Title }}
+    <a href="{{ .RelPermalink }}">
+      {{ .Title }}
+    </a>
   {{ end }}
 
   {{ T "in_language" }}
 
   {{ with (index (.GetTerms "y") 0) }}
-    {{ .Title }}
+    <a href="{{ .RelPermalink }}">
+      {{ .Title }}
+    </a>
   {{ end }}
 {{ else if eq .Kind "home" }}
   {{ T "home_title" }}
