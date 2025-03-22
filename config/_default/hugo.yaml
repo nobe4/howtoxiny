@@ -1,14 +1,14 @@
 cascade:
   # Languages
   - params:
-      languages: ["python"]
-    target:
-      path: "**/python/**"
-      kind: page
-  - params:
       languages: ["go"]
     target:
       path: "**/go/**"
+      kind: page
+  - params:
+      languages: ["python"]
+    target:
+      path: "**/python/**"
       kind: page
   # Examples
   - params:
