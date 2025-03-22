@@ -3,9 +3,6 @@ title = 'How to X in Y'
 
 enableGitInfo = true
 
-[params]
-repo = "https://github.com/nobe4/howtoxiny"
-
 # Cascade is configured from ./config/_default/hugo.toml
 # Use ./script/cascade to generate.
 # Can't use cascade.yaml yet https://github.com/gohugoio/hugo/issues/12899
@@ -13,6 +10,9 @@ repo = "https://github.com/nobe4/howtoxiny"
 defaultContentLanguage = "en"
 defaultContentLanguageInSubdir = true
 enableMissingTranslationPlaceholders = true
+
+[params]
+repo = "https://github.com/nobe4/howtoxiny"
 
 [languages]
 [languages.en]
