@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+#/ Usage: build BASE_URL CACHE_DIR
+
+set -e
+
+show_help() { grep ^#/ <"${0}" | cut -c4-; }
+[ "${*}" == "-h" ] && show_help && exit 0
+
+BASE_URL="${1?}"
+CACHE_DIR="${2?}"
+
+hugo \
+    --gc \
+    --minify \
+    --printPathWarnings \
+    --printI18nWarnings \
+    --printUnusedTemplates \
+    --baseURL "${BASE_URL}" \
+    --cacheDir "${CACHE_DIR}"

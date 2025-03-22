@@ -12,6 +12,7 @@ repo = "https://github.com/nobe4/howtoxiny"
 
 defaultContentLanguage = "en"
 defaultContentLanguageInSubdir = true
+enableMissingTranslationPlaceholders = true
 
 [languages]
 [languages.en]

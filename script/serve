@@ -1,3 +1,7 @@
 #!/usr/bin/env bash
 
-hugo serve
+hugo serve \
+    --cleanDestinationDir \
+    --printPathWarnings \
+    --printI18nWarnings \
+    --printUnusedTemplates
