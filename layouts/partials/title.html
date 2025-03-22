@@ -1,9 +1,15 @@
-{{ with (index (.GetTerms "examples") 0) }}
-  {{ .Title }}
-{{ end }}
+{{ if eq .Kind "page" }}
+  {{ with (index (.GetTerms "examples") 0) }}
+    {{ .Title }}
+  {{ end }}
 
-{{ T "in_language" }}
+  {{ T "in_language" }}
 
-{{ with (index (.GetTerms "languages") 0) }}
+  {{ with (index (.GetTerms "languages") 0) }}
+    {{ .Title }}
+  {{ end }}
+{{ else if eq .Kind "home" }}
+  {{ T "home_title" }}
+{{ else }}
   {{ .Title }}
 {{ end }}

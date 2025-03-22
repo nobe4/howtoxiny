@@ -1,17 +1,9 @@
-<ul>
-  term template
-  {{ range .Data.Pages }}
-    <li>
-      <a href="{{ .Permalink }}">{{ .Title }}</a>
-      <dl>
-        <dt>Link to the brand page</dt>
-        <dd><a href="{{ .Permalink }}">{{ .Permalink }}</a></dd>
-
-        {{ with .Params.website }}
-          <dt>Website</dt>
-          <dd>{{ . }}</dd>
-        {{ end }}
-      </dl>
-    </li>
-  {{ end }}
-</ul>
+{{ define "main" }}
+  <ul>
+    {{ range .Data.Pages }}
+      <li>
+        <a href="{{ .Permalink }}">{{ .Title }}</a>
+      </li>
+    {{ end }}
+  </ul>
+{{ end }}

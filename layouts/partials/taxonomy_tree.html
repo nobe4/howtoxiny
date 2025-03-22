@@ -1,0 +1,29 @@
+{{ $context := .context }}
+{{ $t1 := .root }}
+
+{{ $t2 := "examples" }}
+{{ if eq $t1 "examples" }}
+  {{ $t2 = "languages" }}
+{{ end }}
+
+
+<h2><a href="{{ $context.RelRef (dict "path" $t1) }}">{{ $t1 | title }}</a></h2>
+
+{{ with (index $context.Site.Taxonomies $t1) }}
+  <ul>
+    {{ range $term, $taxonomy := . }}
+      <li>
+        <a href="{{ .Page.RelPermalink }}">{{ .Page.Title }}</a>
+        <ul>
+          {{ range $taxonomy.Pages }}
+            <li>
+              {{ $slug := index (index .Params $t2) 0 }}
+              {{ $title := ((index $context.Site.Taxonomies $t2).Get $slug).Page.Title }}
+              <a href="{{ .RelPermalink }}">{{ $title }}</a>
+            </li>
+          {{ end }}
+        </ul>
+      </li>
+    {{ end }}
+  </ul>
+{{ end }}
