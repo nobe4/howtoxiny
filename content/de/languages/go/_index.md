@@ -2,4 +2,4 @@
 title = "Go"
 +++
 
-Beschreibung der Go Programmier Sprache
+Beschreibung der Go Programmiersprache
