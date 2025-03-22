@@ -2,4 +2,4 @@
 title = "Python"
 +++
 
-Beschreibung der Python Programmier Sprache
+Beschreibung der Python Programmiersprache
