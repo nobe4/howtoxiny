@@ -2,7 +2,7 @@
 # Usage: assert-nothing-changed <command>
 # Inspired by https://github.com/cli/cli/blob/trunk/.github/workflows/lint.yml
 
-"$@" >/dev/null || return 1
+"$@" >/dev/null || exit 1
 
 if ! diff="$(git diff -U1 --color --exit-code)"; then
     printf 'Running %s results in modifications that you must commit:\n%s\n\n' "$*" "$diff" >&2
