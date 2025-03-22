@@ -17,7 +17,6 @@ OUT="./config/_default/hugo.yaml"
 
 cat > "$OUT" <<- EOF
 cascade:
-  # Y
 EOF
 
 find content/en/y/ -mindepth 1 -type d -print0 \
@@ -26,16 +25,12 @@ find content/en/y/ -mindepth 1 -type d -print0 \
         f=$(basename "$f")
         cat >> "$OUT" <<- EOF
   - params:
-      y: ["$f"]
+      "y": ["$f"]
     target:
       path: "**/$f/**"
       kind: page
 EOF
     done
-
-cat >> "$OUT" <<- EOF
-  # X
-EOF
 
 find content/en/x/ -mindepth 1 -type d -print0 \
     | sort --unique --zero-terminated \
@@ -43,7 +38,7 @@ find content/en/x/ -mindepth 1 -type d -print0 \
         f=$(basename "$f")
         cat >> "$OUT" <<- EOF
   - params:
-      x: ["$f"]
+      "x": ["$f"]
     target:
       path: "**/$f"
       kind: page

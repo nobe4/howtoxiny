@@ -1,5 +1,9 @@
 cascade:
-  # Y
+  - params:
+      "y": ["curl"]
+    target:
+      path: "**/curl/**"
+      kind: page
   - params:
       "y": ["go"]
     target:
@@ -10,7 +14,11 @@ cascade:
     target:
       path: "**/python/**"
       kind: page
-  # X
+  - params:
+      "x": ["http_request_get"]
+    target:
+      path: "**/http_request_get"
+      kind: page
   - params:
       "x": ["list_reverse"]
     target:
