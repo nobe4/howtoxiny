@@ -6,9 +6,6 @@
   {{ $t2 = "y" }}
 {{ end }}
 
-
-<h2><a href="{{ $context.RelRef (dict "path" $t1) }}">{{ $t1 | title }}</a></h2>
-
 {{ with (index $context.Site.Taxonomies $t1) }}
   <ul>
     {{ range $term, $taxonomy := . }}
