@@ -1,5 +1,8 @@
 {{ define "main" }}
-  <section>{{ partial "all_natural_languages" . }}</section>
-  <section>{{ partial "all_examples" . }}</section>
-  <section>{{ partial "all_programing_languages" . }}</section>
+  <section>
+    {{ partial "taxonomy_tree" (dict "context" . "root" "examples") }}
+  </section>
+  <section>
+    {{ partial "taxonomy_tree" (dict "context" . "root" "languages") }}
+  </section>
 {{ end }}

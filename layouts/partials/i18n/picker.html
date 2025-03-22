@@ -1,0 +1,13 @@
+{{ with .Translations }}
+  <ul>
+    {{ range . }}
+      <li>
+        <a href="{{ .RelPermalink }}" hreflang="{{ .Language.LanguageCode }}">
+          {{ or .Language.LanguageName .Language.Lang }}</a
+        >
+      </li>
+    {{ end }}
+  </ul>
+{{ else }}
+  {{ T "no_translation" }}
+{{ end }}
