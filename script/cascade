@@ -25,7 +25,7 @@ find content/en/languages/ -mindepth 1 -type d -print0 \
         f=$(basename "$f")
         cat >> "$OUT" <<- EOF
   - params:
-      languages: [ "$f" ]
+      languages: ["$f"]
     target:
       path: "**/$f/**"
       kind: page
@@ -41,7 +41,7 @@ find content/en/examples/ -mindepth 1 -type d -print0 \
         f=$(basename "$f")
         cat >> "$OUT" <<- EOF
   - params:
-      examples: [ "$f" ]
+      examples: ["$f"]
     target:
       path: "**/$f"
       kind: page
