@@ -1,23 +1,23 @@
 cascade:
   # Languages
   - params:
-      languages: [ "python" ]
+      languages: ["python"]
     target:
       path: "**/python/**"
       kind: page
   - params:
-      languages: [ "go" ]
+      languages: ["go"]
     target:
       path: "**/go/**"
       kind: page
   # Examples
   - params:
-      examples: [ "list_reverse" ]
+      examples: ["list_reverse"]
     target:
       path: "**/list_reverse"
       kind: page
   - params:
-      examples: [ "string_match_prefix" ]
+      examples: ["string_match_prefix"]
     target:
       path: "**/string_match_prefix"
       kind: page
