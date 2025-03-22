@@ -1,12 +1,14 @@
 name: ci
 
 on:
+  workflow_dispatch:
   pull_request:
   push:
     branches:
       - main
 
-  workflow_dispatch:
+permissions:
+  contents: read
 
 concurrency:
   group: "ci"
@@ -15,16 +17,13 @@ concurrency:
 jobs:
   lint:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-        with:
-          submodules: recursive
-          fetch-depth: 0
+      - uses: actions/checkout@v4
+      - run: ./script/install
+      - run: ./script/lint
 
-      - name: Install Node.js dependencies
-        run: "npm ci"
-
-      - name: Run linter
-        run: ./script/lint
+  cascade:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: ./script/assert-nothing-changed ./script/cascade

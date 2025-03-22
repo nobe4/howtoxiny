@@ -17,9 +17,9 @@
         <ul>
           {{ range $taxonomy.Pages }}
             <li>
-              {{ $slug := index (index .Params $t2) 0 }}
-              {{ $title := ((index $context.Site.Taxonomies $t2).Get $slug).Page.Title }}
-              <a href="{{ .RelPermalink }}">{{ $title }}</a>
+              <a href="{{ .RelPermalink }}">
+                {{ partial "taxonomy/title" (dict "context" . "taxonomy" $t2) }}
+              </a>
             </li>
           {{ end }}
         </ul>

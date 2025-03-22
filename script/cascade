@@ -1,0 +1,51 @@
+#!/usr/bin/env bash
+#/ Usage: cascade [FLAGS]
+#/
+#/ Update the cascade config file to match the current site.
+#/ Uses the 'en' content as reference.
+#/ See root hugo.toml for more information.
+#/
+#/ Flags:
+#/   -f   Show this help
+
+set -e
+
+show_help() { grep ^#/ <"${0}" | cut -c4-; }
+[ "${*}" == "-h" ] && show_help && exit 0
+
+OUT="./config/_default/hugo.yaml"
+
+cat > "$OUT" <<- EOF
+cascade:
+  # Languages
+EOF
+
+find content/en/languages/ -mindepth 1 -type d -print0 \
+    | sort --unique --zero-terminated \
+    | while IFS= read -r -d '' f; do
+        f=$(basename "$f")
+        cat >> "$OUT" <<- EOF
+  - params:
+      languages: ["$f"]
+    target:
+      path: "**/$f/**"
+      kind: page
+EOF
+    done
+
+cat >> "$OUT" <<- EOF
+  # Examples
+EOF
+
+find content/en/examples/ -mindepth 1 -type d -print0 \
+    | sort --unique --zero-terminated \
+    | while IFS= read -r -d '' f; do
+        f=$(basename "$f")
+        cat >> "$OUT" <<- EOF
+  - params:
+      examples: ["$f"]
+    target:
+      path: "**/$f"
+      kind: page
+EOF
+    done

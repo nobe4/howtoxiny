@@ -1,0 +1,16 @@
+{{ define "main" }}
+  <ul>
+    {{ $tax := "examples" }}
+    {{ if eq .Data.Plural "examples" }}
+      {{ $tax = "languages" }}
+    {{ end }}
+
+    {{ range .Pages }}
+      <li>
+        <a href="{{ .RelPermalink }}">
+          {{ partial "taxonomy/title" (dict "context" . "taxonomy" $tax) }}
+        </a>
+      </li>
+    {{ end }}
+  </ul>
+{{ end }}

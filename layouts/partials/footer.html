@@ -13,10 +13,5 @@
     {{ end }}
   </div>
 
-  <details>
-    <summary>debug</summary>
-    <pre>
-        kind: {{ .Kind }}
-    </pre>
-  </details>
+  {{ partial "debug.html" . }}
 </footer>

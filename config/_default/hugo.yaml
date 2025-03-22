@@ -1,0 +1,23 @@
+cascade:
+  # Languages
+  - params:
+      languages: ["go"]
+    target:
+      path: "**/go/**"
+      kind: page
+  - params:
+      languages: ["python"]
+    target:
+      path: "**/python/**"
+      kind: page
+  # Examples
+  - params:
+      examples: ["list_reverse"]
+    target:
+      path: "**/list_reverse"
+      kind: page
+  - params:
+      examples: ["string_match_prefix"]
+    target:
+      path: "**/string_match_prefix"
+      kind: page

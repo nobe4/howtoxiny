@@ -1,0 +1,2 @@
+{{ $slug := index (index .context.Params .taxonomy) 0 }}
+{{ ((index .context.Site.Taxonomies .taxonomy).Get $slug).Page.Title }}
