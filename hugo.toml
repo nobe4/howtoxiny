@@ -3,13 +3,15 @@ title = 'How to X in Y'
 
 enableGitInfo = true
 
-# TODO: use additional config file in config/
-# Using Yaml would probably be a good idea as well
-defaultContentLanguage = "en"
-defaultContentLanguageInSubdir = true
-
 [params]
 repo = "https://github.com/nobe4/howtoxiny"
+
+# Cascade is configured from ./config/_default/hugo.toml
+# Use ./script/cascade to generate.
+# Can't use cascade.yaml yet https://github.com/gohugoio/hugo/issues/12899
+
+defaultContentLanguage = "en"
+defaultContentLanguageInSubdir = true
 
 [languages]
 [languages.en]
@@ -19,33 +21,6 @@ repo = "https://github.com/nobe4/howtoxiny"
     languageName = "Français"
     contentDir = "content/fr"
 
-[[cascade]]
-    [cascade.params]
-        languages = ["go"]
-    [cascade.target]
-        path = '**/go/**'
-        kind = 'page'
-[[cascade]]
-    [cascade.params]
-        languages = ["python"]
-    [cascade.target]
-        path = '**/python/**'
-        kind = 'page'
-
-[[cascade]]
-    [cascade.params]
-        examples = ["list_reverse"]
-    [cascade.target]
-        path = '**/list_reverse'
-        kind = 'page'
-[[cascade]]
-    [cascade.params]
-        examples = ["string_match_prefix"]
-    [cascade.target]
-        path = '**/string_match_prefix'
-        kind = 'page'
-
 [taxonomies]
 language = "languages"
 example = "examples"
-
