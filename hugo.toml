@@ -21,6 +21,9 @@ enableMissingTranslationPlaceholders = true
 [languages.fr]
     languageName = "Français"
     contentDir = "content/fr"
+[languages.de]
+    languageName = "Deutsch"
+    contentDir = "content/de"
 
 [taxonomies]
 language = "languages"
