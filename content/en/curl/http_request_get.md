@@ -1,0 +1,3 @@
+```shell
+curl example.com
+```

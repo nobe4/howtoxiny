@@ -1,23 +1,31 @@
 cascade:
-  # Languages
   - params:
-      languages: ["go"]
+      "y": ["curl"]
+    target:
+      path: "**/curl/**"
+      kind: page
+  - params:
+      "y": ["go"]
     target:
       path: "**/go/**"
       kind: page
   - params:
-      languages: ["python"]
+      "y": ["python"]
     target:
       path: "**/python/**"
       kind: page
-  # Examples
   - params:
-      examples: ["list_reverse"]
+      "x": ["http_request_get"]
+    target:
+      path: "**/http_request_get"
+      kind: page
+  - params:
+      "x": ["list_reverse"]
     target:
       path: "**/list_reverse"
       kind: page
   - params:
-      examples: ["string_match_prefix"]
+      "x": ["string_match_prefix"]
     target:
       path: "**/string_match_prefix"
       kind: page
