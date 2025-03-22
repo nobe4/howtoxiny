@@ -21,7 +21,7 @@ cascade:
 EOF
 
 find content/en/languages/ -mindepth 1 -type d -print0 \
-    | sort -u \
+    | sort -z -u \
     | while IFS= read -r -d '' f; do
         f=$(basename "$f")
         cat >> "$OUT" <<- EOF
@@ -38,7 +38,7 @@ cat >> "$OUT" <<- EOF
 EOF
 
 find content/en/examples/ -mindepth 1 -type d -print0 \
-    | sort -u \
+    | sort -z -u \
     | while IFS= read -r -d '' f; do
         f=$(basename "$f")
         cat >> "$OUT" <<- EOF
