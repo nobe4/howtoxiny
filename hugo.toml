@@ -28,3 +28,7 @@ x = "x"
 # Cascade is configured from ./config/_default/hugo.toml
 # Use ./script/cascade to generate.
 # Can't use cascade.yaml yet https://github.com/gohugoio/hugo/issues/12899
+
+[markup]
+[markup.highlight]
+noClasses = false # using this to disable the syntax highlighting
