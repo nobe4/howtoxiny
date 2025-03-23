@@ -6,10 +6,11 @@
 
   <h1>
     {{ if not .IsHome }}
-      <a href="{{ .Site.BaseURL }}" aria-label="Home" data-pagefind-ignore="all"
+      <a href="{{ relLangURL "" }}" aria-label="Home" data-pagefind-ignore="all"
         >⇧</a
       >&nbsp;
     {{ end }}
+
     {{ partial "title" . }}
   </h1>
 
