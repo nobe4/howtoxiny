@@ -1,9 +1,21 @@
 {{ define "main" }}
-  <section>
+  <style>
+    #results li a {
+      text-decoration: none;
+      display: block;
+      width: 100%;
+    }
+    #results li a :nth-child(1) {
+      text-decoration: underline;
+    }
+  </style>
+
+  <section data-pagefind-ignore="all">
     <h2><a href="{{ .RelRef (dict "path" "x") }}">X</a></h2>
     {{ partial "taxonomy/tree" (dict "context" . "root" "x") }}
   </section>
-  <section>
+
+  <section data-pagefind-ignore="all">
     <h2><a href="{{ .RelRef (dict "path" "y") }}">Y</a></h2>
     {{ partial "taxonomy/tree" (dict "context" . "root" "y") }}
   </section>

@@ -7,7 +7,7 @@
 {{ end }}
 
 {{ with (index $context.Site.Taxonomies $t1) }}
-  <ul>
+  <ul data-pagefind-ignore="all">
     {{ range $term, $taxonomy := . }}
       <li>
         <a href="{{ .Page.RelPermalink }}">{{ .Page.Title }}</a>

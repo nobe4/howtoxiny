@@ -1,18 +1,23 @@
-{{ with .Translations }}
-  <details class="dropdown">
-    <summary>
-      {{ $.Site.Language.LanguageName }}
-    </summary>
-    <ul>
-      {{ range . }}
-        <li>
-          <a href="{{ .RelPermalink }}" hreflang="{{ .Language.LanguageCode }}">
-            {{ or .Language.LanguageName .Language.Lang }}</a
-          >
-        </li>
-      {{ end }}
-    </ul>
-  </details>
-{{ else }}
-  {{ T "no_translation" }}
-{{ end }}
+<div class="i18n-picker" data-pagefind-ignore="all">
+  {{ with .Translations }}
+    <details class="dropdown">
+      <summary>
+        {{ $.Site.Language.LanguageName }}
+      </summary>
+      <ul>
+        {{ range . }}
+          <li>
+            <a
+              href="{{ .RelPermalink }}"
+              hreflang="{{ .Language.LanguageCode }}"
+            >
+              {{ or .Language.LanguageName .Language.Lang }}</a
+            >
+          </li>
+        {{ end }}
+      </ul>
+    </details>
+  {{ else }}
+    {{ T "no_translation" }}
+  {{ end }}
+</div>

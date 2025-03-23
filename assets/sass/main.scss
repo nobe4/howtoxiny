@@ -1,0 +1,9 @@
+#results li a {
+  text-decoration: none;
+  display: block;
+  width: 100%;
+
+  :nth-child(1) {
+    text-decoration: underline;
+  }
+}
