@@ -4,6 +4,9 @@ name: build
 on:
   workflow_call:
 
+permissions:
+  contents: read
+
 concurrency:
   group: "build"
   cancel-in-progress: false
