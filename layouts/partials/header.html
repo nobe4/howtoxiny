@@ -1,4 +1,21 @@
 <header>
-  <h1>{{ partial "title" . }}</h1>
+  <h1>
+    {{ if not .IsHome }}
+      <a href="{{ .Site.BaseURL }}" aria-label="Home">⇧</a>&nbsp;
+    {{ end }}
+    {{ partial "title" . }}
+  </h1>
   {{ partial "i18n/picker" . }}
+
+  <div>
+    <input
+      id="search"
+      name="search"
+      type="search"
+      aria-label="search"
+      placeholder="Search"
+    />
+    <small id="search-helper"></small>
+    <ul id="results"></ul>
+  </div>
 </header>
