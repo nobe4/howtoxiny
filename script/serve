@@ -1,6 +1,13 @@
 #!/usr/bin/env bash
 
+set -e
+
+IP="$(hostname -I | cut -d' ' -f1)"
+
 hugo serve \
+    --bind 0.0.0.0 \
+    --baseURL "http://${IP}:1313/" \
+    --openBrowser \
     --cleanDestinationDir \
     --printPathWarnings \
     --printI18nWarnings \
