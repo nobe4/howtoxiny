@@ -1,6 +1,13 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width" />
+  {{ if eq .Kind "term" }}
+    <meta data-pagefind-meta="kind:{{ .Data.Singular | title }}" />
+  {{ else if eq .Kind "taxonomy" }}
+    <meta data-pagefind-meta="kind:{{ .Data.Singular | title }}" />
+  {{ else }}
+    <meta data-pagefind-meta="kind:{{ .Kind }}" />
+  {{ end }}
   <title>
     {{ if not .IsHome }}{{ partial "title" . }} |{{ end }}
     {{ site.Title }}
