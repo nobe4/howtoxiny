@@ -11,6 +11,10 @@ disableKinds = ["section"]
 [params]
 repo = "https://github.com/nobe4/howtoxiny"
 
+[build]
+noJSConfigInAssets = true
+
+
 [languages]
 [languages.en]
     languageName = "English"
