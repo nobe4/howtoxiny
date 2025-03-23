@@ -1,4 +1,7 @@
 {{ define "main" }}
+  {{ .Content }}
+
+
   <ul data-pagefind-ignore="all">
     {{ $tax := "x" }}
     {{ if eq .Data.Plural "x" }}

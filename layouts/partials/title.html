@@ -14,6 +14,8 @@
   {{ end }}
 {{ else if eq .Kind "home" }}
   {{ T "home_title" }}
+{{ else if eq .Kind "taxonomy" }}
+  {{ .Data.Plural | title }}
 {{ else }}
   {{ .Title }}
 {{ end }}
