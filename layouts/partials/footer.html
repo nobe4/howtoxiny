@@ -1,4 +1,4 @@
-<footer>
+<footer class="container">
   <div>
     {{ with .File }}
       {{ $href := printf "%s/blob/main/content/%s/%s" $.Site.Params.repo $.Lang .Path }}
@@ -12,6 +12,4 @@
       </a>
     {{ end }}
   </div>
-
-  {{ partial "debug.html" . }}
 </footer>

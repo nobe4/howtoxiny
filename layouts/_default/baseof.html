@@ -6,10 +6,11 @@
   {{ partial "head" . }}
   <body>
     {{ partial "header" . }}
-    <main>
+    <main class="container">
       {{ block "main" . }}{{ end }}
     </main>
     {{ partial "footer" . }}
     {{ partial "assets/js" . }}
+    {{ partial "debug" . }}
   </body>
 </html>
