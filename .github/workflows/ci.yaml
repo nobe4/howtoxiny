@@ -15,6 +15,9 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  build:
+    uses: ./.github/workflows/build.yaml
+
   lint:
     runs-on: ubuntu-latest
     steps:
