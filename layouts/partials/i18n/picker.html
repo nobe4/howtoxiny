@@ -2,7 +2,7 @@
   {{ with .Translations }}
     <details class="dropdown">
       <summary>
-        {{ $.Site.Language.LanguageName }}
+        {{ $.Site.Language.LanguageCode }}
       </summary>
       <ul>
         {{ range . }}
@@ -11,13 +11,22 @@
               href="{{ .RelPermalink }}"
               hreflang="{{ .Language.LanguageCode }}"
             >
-              {{ or .Language.LanguageName .Language.Lang }}</a
+              {{ .Language.LanguageCode }}</a
             >
           </li>
         {{ end }}
       </ul>
     </details>
   {{ else }}
-    {{ T "no_translation" }}
+    <details class="dropdown">
+      <summary>
+        {{ T "no_translation" }}
+      </summary>
+      <ul>
+        <li>
+          <a href="#">{{ T "contribute" }}</a>
+        </li>
+      </ul>
+    </details>
   {{ end }}
 </div>
