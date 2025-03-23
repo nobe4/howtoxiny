@@ -20,9 +20,8 @@ window.addEventListener("DOMContentLoaded", () => {
         return `
         <li>
             <a href="${result.url}">
-                <span> ${result.meta.title} </span> <br>
-                <span> ${result.excerpt} </span> <br>
-                <span> ${result.url} </span>
+                <div> <span>${result.meta.title}</span> <small>[${result.meta.kind}]</small> </div>
+                <div> ${result.excerpt} </div>
             </a>
         </li>
         `;
