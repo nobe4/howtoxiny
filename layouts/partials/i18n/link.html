@@ -1,0 +1,5 @@
+{{- with site.GetPage . -}}
+  {{- .RelPermalink -}}
+{{- else -}}
+  {{- (site.Sites.Default.GetPage .).RelPermalink -}}
+{{- end -}}

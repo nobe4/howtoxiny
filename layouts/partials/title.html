@@ -1,17 +1,25 @@
 {{ if eq .Kind "page" }}
-  {{ with (index (.GetTerms "x") 0) }}
-    <a href="{{ .RelPermalink }}">
-      {{ .Title }}
-    </a>
+  {{ $x := (index (.GetTerms "x") 0) }}
+  {{ $y := (index (.GetTerms "x") 0) }}
+
+  {{ if and $x $y }}
+    {{ with $x }}
+      <a href="{{ .RelPermalink }}">
+        {{ .Title }}
+      </a>
+    {{ end }}
+
+    {{ T "in_language" }}
+
+    {{ with $y }}
+      <a href="{{ .RelPermalink }}">
+        {{ .Title }}
+      </a>
+    {{ end }}
+  {{ else }}
+    {{ .Title }}
   {{ end }}
 
-  {{ T "in_language" }}
-
-  {{ with (index (.GetTerms "y") 0) }}
-    <a href="{{ .RelPermalink }}">
-      {{ .Title }}
-    </a>
-  {{ end }}
 {{ else if eq .Kind "home" }}
   {{ T "home_title" }}
 {{ else if eq .Kind "taxonomy" }}

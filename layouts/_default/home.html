@@ -1,5 +1,11 @@
 {{ define "main" }}
   {{ partial "search" . }}
+
+
+  <section>
+    <a href="{{ partial "i18n/link" "contributing" }}">{{ T "contribute" }}</a>
+  </section>
+
   <section data-pagefind-ignore="all">
     <h2><a href="{{ .RelRef (dict "path" "x") }}">X</a></h2>
     {{ partial "taxonomy/tree" (dict "context" . "root" "x") }}
