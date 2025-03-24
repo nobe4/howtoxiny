@@ -1,32 +1,25 @@
 <div class="i18n-picker" data-pagefind-ignore="all">
-  {{ with .Translations }}
-    <details class="dropdown">
-      <summary>
-        {{ $.Site.Language.LanguageCode }}
-      </summary>
-      <ul>
-        {{ range . }}
-          <li>
-            <a
-              href="{{ .RelPermalink }}"
-              hreflang="{{ .Language.LanguageCode }}"
-            >
-              {{ .Language.LanguageCode }}</a
-            >
-          </li>
-        {{ end }}
-      </ul>
-    </details>
-  {{ else }}
-    <details class="dropdown">
-      <summary>
+  <details class="dropdown">
+    <summary>
+      {{ with .Translations }}
+        {{ $.Site.Language.LanguageName }}
+      {{ else }}
         {{ T "no_translation" }}
-      </summary>
-      <ul>
+      {{ end }}
+    </summary>
+    <ul>
+      {{ range .Translations }}
         <li>
-          <a href="#">{{ T "contribute" }}</a>
+          <a href="{{ .RelPermalink }}" hreflang="{{ .Language.LanguageCode }}">
+            {{ .Language.LanguageName }}</a
+          >
         </li>
-      </ul>
-    </details>
-  {{ end }}
+      {{ end }}
+      <li>
+        <a href="{{ partial "i18n/link" "contributing" }}"
+          >{{ T "contribute" }}</a
+        >
+      </li>
+    </ul>
+  </details>
 </div>
