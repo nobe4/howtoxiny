@@ -5,12 +5,10 @@
   </nav>
 
   <h1>
-    {{ if not .IsHome }}
-      <a href="{{ relLangURL "" }}" aria-label="Home" data-pagefind-ignore="all"
-        >⇧</a
-      >&nbsp;
-    {{ end }}
-
+    <a href="{{ relLangURL "" }}" aria-label="Home" data-pagefind-ignore="all">
+      {{- (resources.Get "images/logo.svg").Content | safeHTML -}}
+    </a>
+    &nbsp;
     {{ partial "title" . }}
   </h1>
 </header>

@@ -31,3 +31,12 @@ body {
 footer {
   margin-top: auto;
 }
+
+svg {
+  width: 1em;
+  height: 1em;
+
+  #logo {
+    fill: var(--pico-color);
+  }
+}
