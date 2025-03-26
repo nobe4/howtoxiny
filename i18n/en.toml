@@ -1,4 +1,4 @@
-home_title = "How to X in Y"
+home_title = "How to {{ .x }} in {{ .y }}"
 
 contribute = "Contribute"
 glossary = "Glossary"
