@@ -21,7 +21,11 @@
   {{ end }}
 
 {{ else if eq .Kind "home" }}
-  {{ T "home_title" }}
+  {{ T "home_title" ( dict
+    "x" (printf "<a href=\"%s\">X</a>" (.RelRef (dict "path" "x")))
+    "y" (printf "<a href=\"%s\">Y</a>" (.RelRef (dict "path" "y")))
+    ) | safeHTML
+  }}
 {{ else if eq .Kind "taxonomy" }}
   {{ .Data.Plural | title }}
 {{ else }}

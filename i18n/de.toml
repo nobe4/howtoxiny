@@ -1,4 +1,4 @@
-home_title = "Wie X in Y"
+home_title = "Wie {{ .x }} in {{ .y }}"
 translations = "Übersetzungen"
 no_translation = "Keine Übersetzung"
 in_language = "in"
