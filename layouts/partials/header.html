@@ -1,9 +1,4 @@
 <header class="container">
-  <nav>
-    <div></div>
-    {{ partial "i18n/picker" . }}
-  </nav>
-
   <h1>
     <a href="{{ relLangURL "" }}" aria-label="Home" data-pagefind-ignore="all">
       {{- (resources.Get "images/logo.svg").Content | safeHTML -}}
