@@ -1,3 +1,13 @@
-<nav class="align-right mx-auto flex w-xl flex-row-reverse">
+<nav
+  class="align-right mx-auto flex w-xl flex-row items-center justify-between"
+>
+  <a
+    class="decoration-none text-4xl"
+    href="{{ relLangURL "" }}"
+    aria-label="Home"
+    data-pagefind-ignore="all"
+  >
+    {{- (resources.Get "images/logo.svg").Content | safeHTML -}}
+  </a>
   {{ partial "i18n/picker" . }}
 </nav>

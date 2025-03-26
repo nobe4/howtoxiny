@@ -4,7 +4,7 @@
 
   {{ if and $x $y }}
     {{ with $x }}
-      <a class="hover:text-accent px-2 underline" href="{{ .RelPermalink }}">
+      <a class="hover:text-accent pr-2 underline" href="{{ .RelPermalink }}">
         {{ .Title }}
       </a>
     {{ end }}
@@ -12,7 +12,7 @@
     {{ T "in_language" }}
 
     {{ with $y }}
-      <a class="hover:text-accent px-2 underline" href="{{ .RelPermalink }}">
+      <a class="hover:text-accent pl-2 underline" href="{{ .RelPermalink }}">
         {{ .Title }}
       </a>
     {{ end }}
