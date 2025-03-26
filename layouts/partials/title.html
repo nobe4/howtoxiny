@@ -1,6 +1,6 @@
 {{ if eq .Kind "page" }}
   {{ $x := (index (.GetTerms "x") 0) }}
-  {{ $y := (index (.GetTerms "x") 0) }}
+  {{ $y := (index (.GetTerms "y") 0) }}
 
   {{ if and $x $y }}
     {{ with $x }}
