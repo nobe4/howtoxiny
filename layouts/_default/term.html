@@ -1,8 +1,8 @@
 {{ define "main" }}
-  {{ .Content }}
+  {{ partial "content" . }}
 
 
-  <ul data-pagefind-ignore="all">
+  <ul class="ml-4 list-disc" data-pagefind-ignore="all">
     {{ $tax := "x" }}
     {{ if eq .Data.Plural "x" }}
       {{ $tax = "y" }}
@@ -10,7 +10,7 @@
 
     {{ range .Pages }}
       <li>
-        <a href="{{ .RelPermalink }}">
+        <a class="hover:text-accent underline" href="{{ .Page.RelPermalink }}">
           {{ partial "taxonomy/title" (dict "context" . "taxonomy" $tax) }}
         </a>
       </li>

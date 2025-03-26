@@ -4,7 +4,7 @@
 
   {{ if and $x $y }}
     {{ with $x }}
-      <a class="hover:text-accent underline" href="{{ .RelPermalink }}">
+      <a class="hover:text-accent px-2 underline" href="{{ .RelPermalink }}">
         {{ .Title }}
       </a>
     {{ end }}
@@ -12,12 +12,12 @@
     {{ T "in_language" }}
 
     {{ with $y }}
-      <a class="hover:text-accent underline" href="{{ .RelPermalink }}">
+      <a class="hover:text-accent px-2 underline" href="{{ .RelPermalink }}">
         {{ .Title }}
       </a>
     {{ end }}
   {{ else }}
-    {{ .Title }}
+    {{ .Title | title }}
   {{ end }}
 
 {{ else if eq .Kind "home" }}
@@ -30,5 +30,5 @@
 {{ else if eq .Kind "taxonomy" }}
   {{ .Data.Plural | title }}
 {{ else }}
-  {{ .Title }}
+  {{ .Title | title }}
 {{ end }}

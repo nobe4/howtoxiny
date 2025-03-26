@@ -1,48 +1,15 @@
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
 @source "hugo_stats.json";
 
 @theme {
-  --color-light: var(--color-zinc-400);
+  --color-light: var(--color-zinc-300);
+  --color-gray: var(--color-zinc-800);
   --color-dark: var(--color-zinc-900);
   --color-accent: var(--color-blue-500);
 }
 
-/*
-#results {
-  li {
-    a {
-      text-decoration: none;
-      display: block;
-      width: 100%;
-
-      > :nth-child(1) {
-        text-decoration: underline;
-      }
-
-      div:nth-child(1) {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        align-content: center;
-        justify-content: space-between;
-        align-items: center;
-      }
-    }
-  }
-}
-
-body {
-  display: flex;
-  min-height: 100vh;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-footer {
-  margin-top: auto;
-}
-
-*/
+/* Needed because the svg can't be styled directly in the HTML. */
 header {
   a:nth-child(1):hover {
     svg path {
