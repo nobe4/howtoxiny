@@ -12,5 +12,6 @@
     {{ if not .IsHome }}{{ partial "title" . }} |{{ end }}
     {{ site.Title }}
   </title>
+  {{ partial "assets/favicon" . }}
   {{ partial "assets/css" . }}
 </head>
