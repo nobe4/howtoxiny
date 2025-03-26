@@ -13,5 +13,7 @@
     {{ site.Title }}
   </title>
   {{ partialCached "assets/favicon" . }}
-  {{ partialCached "assets/css" . }}
+  {{ with (templates.Defer (dict "key" "global")) }}
+    {{ partialCached "assets/css" . }}
+  {{ end }}
 </head>
