@@ -1,6 +1,15 @@
-<header class="container">
-  <h1>
-    <a href="{{ relLangURL "" }}" aria-label="Home" data-pagefind-ignore="all">
+<header
+  class="{{ if .IsHome }}
+    justify-center text-6xl
+  {{ end }} mx-auto mt-auto flex w-2xl"
+>
+  <h1 class="flex">
+    <a
+      class="decoration-none"
+      href="{{ relLangURL "" }}"
+      aria-label="Home"
+      data-pagefind-ignore="all"
+    >
       {{- (resources.Get "images/logo.svg").Content | safeHTML -}}
     </a>
     &nbsp;

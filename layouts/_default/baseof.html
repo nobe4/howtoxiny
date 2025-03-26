@@ -1,16 +1,20 @@
 <!doctype html>
 <html
-  lang="{{ or site.Language.LanguageCode }}"
+  lang="{{ site.Language.LanguageCode }}"
   dir="{{ or site.Language.LanguageDirection `ltr` }}"
+  class="h-full"
 >
   {{ partial "head" . }}
-  <body>
+  <body class="bg-dark text-light flex h-full flex-col justify-between p-3">
     {{ partial "nav" . }}
+
     {{ partial "header" . }}
-    <main class="container">
+    <main class="mx-auto mb-auto flex h-auto w-2xl flex-col">
       {{ block "main" . }}{{ end }}
     </main>
+
     {{ partial "footer" . }}
+
     {{ partial "assets/js" . }}
     {{ partial "debug" . }}
   </body>

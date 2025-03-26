@@ -1,3 +1,24 @@
 #!/usr/bin/env bash
+#/ Usage: format [-w]
+#/ Flags:
+#/   -w  Watch changes and format
+#/   -h  Show this help
+
+set -e
+
+show_help() { grep ^#/ <"${0}" |cut -c4- ; }
+[[ "$*" == "-h" ]] && show_help && exit 0
+
+if [[ "$*" == "-w" ]]; then
+    trap "exit 0" SIGINT SIGTERM
+
+    while true; do
+        find public | \
+            entr -c \
+                npx prettier --write .
+    done
+
+    exit 0
+fi
 
 npx prettier --write .

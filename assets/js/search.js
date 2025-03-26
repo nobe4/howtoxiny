@@ -18,10 +18,10 @@ window.addEventListener("DOMContentLoaded", () => {
       placeholderTemplate: () => "<p>Loading ... </p>",
       resultTemplate: (result) => {
         return `
-        <li>
-            <a href="${result.url}">
-                <div> <span>${result.meta.title}</span> <small>[${result.meta.kind}]</small> </div>
-                <div> ${result.excerpt} </div>
+        <li class="mb-2">
+            <a class="flex justify-between" href="${result.url}">
+                <span>${result.meta.title}</span>
+                <small>[${result.meta.kind}]</small>
             </a>
         </li>
         `;
