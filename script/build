@@ -6,8 +6,10 @@ set -e
 show_help() { grep ^#/ <"${0}" | cut -c4-; }
 [ "${*}" == "-h" ] && show_help && exit 0
 
-BASE_URL="${1?}"
-CACHE_DIR="${2?}"
+BASE_URL="${1:-https://howtoxiny.org}"
+CACHE_DIR="${2:-$(pwd)/.cache}"
+
+echo "Building site to ${BASE_URL} with cache in ${CACHE_DIR}"
 
 hugo \
     --gc \

@@ -1,3 +1,13 @@
+@import "tailwindcss";
+@source "hugo_stats.json";
+
+@theme {
+  --color-light: var(--color-zinc-400);
+  --color-dark: var(--color-zinc-900);
+  --color-accent: var(--color-blue-500);
+}
+
+/*
 #results {
   li {
     a {
@@ -32,16 +42,19 @@ footer {
   margin-top: auto;
 }
 
+*/
 header {
-  a:nth-child(1) {
-    text-decoration: none;
+  a:nth-child(1):hover {
+    svg path {
+      fill: var(--color-accent);
+    }
   }
   svg {
     width: 1em;
     height: 1em;
 
-    #logo {
-      fill: var(--pico-color);
+    path {
+      fill: var(--color-light);
     }
   }
 }

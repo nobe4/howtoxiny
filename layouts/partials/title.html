@@ -4,7 +4,7 @@
 
   {{ if and $x $y }}
     {{ with $x }}
-      <a href="{{ .RelPermalink }}">
+      <a class="hover:text-accent underline" href="{{ .RelPermalink }}">
         {{ .Title }}
       </a>
     {{ end }}
@@ -12,7 +12,7 @@
     {{ T "in_language" }}
 
     {{ with $y }}
-      <a href="{{ .RelPermalink }}">
+      <a class="hover:text-accent underline" href="{{ .RelPermalink }}">
         {{ .Title }}
       </a>
     {{ end }}
@@ -21,9 +21,10 @@
   {{ end }}
 
 {{ else if eq .Kind "home" }}
+  {{ $tmpl :="<a class=\"hover:text-accent underline px-2\" href=\"%s\">%s</a>" }}
   {{ T "home_title" ( dict
-    "x" (printf "<a href=\"%s\">X</a>" (.RelRef (dict "path" "x")))
-    "y" (printf "<a href=\"%s\">Y</a>" (.RelRef (dict "path" "y")))
+    "x" (printf $tmpl (.RelRef (dict "path" "x")) "X")
+    "y" (printf $tmpl (.RelRef (dict "path" "y")) "Y")
     ) | safeHTML
   }}
 {{ else if eq .Kind "taxonomy" }}
