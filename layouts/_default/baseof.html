@@ -14,11 +14,11 @@
         justify-center text-6xl mt-auto
       {{ else }}
         mt-4 text-3xl
-      {{ end }} mb-4 flex w-full md:mx-auto md:w-xl"
+      {{ end }} md:w-xl mb-4 flex w-full md:mx-auto"
     >
       {{ partial "title/header" . }}
     </header>
-    <main class="mx-auto mb-auto flex h-auto w-xl flex-col">
+    <main class="w-xl mx-auto mb-auto flex h-auto flex-col">
       {{ block "main" . }}{{ end }}
     </main>
 

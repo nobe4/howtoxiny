@@ -10,10 +10,10 @@
     {{ end }}
   </summary>
   <ul
-    class="border-light bg-gray absolute left-0 z-1 w-full rounded-b-md border p-2 pl-4"
+    class="border-light bg-gray z-1 absolute left-0 w-full rounded-b-md border p-2 pl-4"
   >
     {{ range .Translations }}
-      <li class="pt-1 pb-1">
+      <li class="pb-1 pt-1">
         <a
           class="hover:text-accent inline-block w-full"
           href="{{ .RelPermalink }}"
@@ -23,7 +23,7 @@
         >
       </li>
     {{ end }}
-    <li class="pt-1 pb-1">
+    <li class="pb-1 pt-1">
       <a
         class="hover:text-accent inline-block w-full"
         href="{{ partial "i18n/link" "contributing" }}"
