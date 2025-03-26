@@ -15,14 +15,14 @@ cascade:
       path: "**/python/**"
       kind: page
   - params:
+      "x": ["array_reverse"]
+    target:
+      path: "**/array_reverse"
+      kind: page
+  - params:
       "x": ["http_request_get"]
     target:
       path: "**/http_request_get"
-      kind: page
-  - params:
-      "x": ["list_reverse"]
-    target:
-      path: "**/list_reverse"
       kind: page
   - params:
       "x": ["string_match_prefix"]
