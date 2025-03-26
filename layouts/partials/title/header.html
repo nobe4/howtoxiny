@@ -1,0 +1,12 @@
+<h1 class="flex flex-wrap items-center">
+  <a
+    class="decoration-none"
+    href="{{ relLangURL "" }}"
+    aria-label="Home"
+    data-pagefind-ignore="all"
+  >
+    {{- (resources.Get "images/logo.svg").Content | safeHTML -}}
+  </a>
+  &nbsp;
+  {{ partial "title/text" . }}
+</h1>

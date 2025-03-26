@@ -1,12 +1,15 @@
-<footer class="mx-auto w-2xl flex-none">
+<footer class="mx-auto mt-4 w-xl flex-none">
   <div>
     {{ with .File }}
       {{ $href := printf "%s/blob/main/content/%s/%s" $.Site.Params.repo $.Lang .Path }}
-      <a href="{{ $href }}"> View file </a>
+      <a class="hover:text-accent underline" href="{{ $href }}"> View file </a>
     {{ end }}
     {{ with .GitInfo }}
       &nbsp;| Last updated:
-      <a href="{{ $.Site.Params.repo }}/commit/{{ .Hash }}">
+      <a
+        class="hover:text-accent underline"
+        href="{{ $.Site.Params.repo }}/commit/{{ .Hash }}"
+      >
         {{ .CommitDate.Format "2006-02-01" }}
         ({{ .AbbreviatedHash }})
       </a>

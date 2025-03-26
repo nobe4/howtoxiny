@@ -1,5 +1,5 @@
 {{ define "main" }}
-  {{ .Content }}
+  {{ partial "content" . }}
 
   {{ partial "taxonomy/tree" (dict "context" . "root" .Data.Plural) }}
 {{ end }}
