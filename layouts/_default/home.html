@@ -1,19 +1,14 @@
 {{ define "main" }}
-  <section class="my-4">
+  <section id="search">
     {{ partial "search" . }}
   </section>
 
-  <section class="my-4">
-    <a
-      class="hover:text-accent mr-2 underline"
-      href="{{ partial "i18n/link" "contributing" }}"
-    >
+  <section>
+    <a href="{{ partial "i18n/link" "contributing" }}">
       {{ T "contribute" }}
     </a>
-    <a
-      class="hover:text-accent underline"
-      href="{{ partial "i18n/link" "glossary" }}"
-    >
+    &nbsp;
+    <a href="{{ partial "i18n/link" "glossary" }}">
       {{ T "glossary" }}
     </a>
   </section>

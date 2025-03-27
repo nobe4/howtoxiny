@@ -7,16 +7,16 @@
 {{ end }}
 
 {{ with (index $context.Site.Taxonomies $t1) }}
-  <ul class="ml-4 list-disc" data-pagefind-ignore="all">
+  <ul data-pagefind-ignore="all">
     {{ range $term, $taxonomy := . }}
       <li>
-        <a class="hover:text-accent underline" href="{{ .Page.RelPermalink }}">
+        <a href="{{ .Page.RelPermalink }}">
           {{ .Page.Title }}
         </a>
-        <ul class="flex">
+        <ul>
           {{ range $taxonomy.Pages }}
-            <li class="mr-1">
-              <a class="hover:text-accent underline" href="{{ .RelPermalink }}">
+            <li>
+              <a href="{{ .RelPermalink }}">
                 {{ partial "taxonomy/title" (dict "context" . "taxonomy" $t2) }}
               </a>
             </li>
