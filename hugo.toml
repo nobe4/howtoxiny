@@ -11,6 +11,8 @@ disableKinds = ["section"]
 [params]
 repo = "https://github.com/nobe4/howtoxiny"
 
+[build]
+noJSConfigInAssets = true
 
 [languages]
 [languages.en]
@@ -34,23 +36,3 @@ x = "x"
 [markup]
 [markup.highlight]
 noClasses = false # using this to disable the syntax highlighting
-
-[build]
-noJSConfigInAssets = true
-  [build.buildStats]
-    enable = true
-  [[build.cachebusters]]
-    source = 'assets/notwatching/hugo_stats\.json'
-    target = 'css'
-  [[build.cachebusters]]
-    source = 'tailwind\.config\.js'
-    target = 'css'
-
-[module]
-  [[module.mounts]]
-    source = 'assets'
-    target = 'assets'
-  [[module.mounts]]
-    disableWatch = true
-    source = 'hugo_stats.json'
-    target = 'assets/notwatching/hugo_stats.json'

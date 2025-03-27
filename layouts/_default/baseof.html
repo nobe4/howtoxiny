@@ -2,28 +2,13 @@
 <html
   lang="{{ site.Language.LanguageCode }}"
   dir="{{ or site.Language.LanguageDirection `ltr` }}"
-  class="h-full"
 >
   {{ partial "head" . }}
-  <body class="bg-dark text-light flex h-full flex-col justify-between p-3">
+  <body {{ if .IsHome }}class="home"{{ end }}>
     {{ partial "nav" . }}
-
-
-    <header
-      class="{{ if .IsHome }}
-        justify-center text-6xl mt-auto
-      {{ else }}
-        mt-4 text-3xl
-      {{ end }} mb-4 flex w-full md:mx-auto md:w-xl"
-    >
-      {{ partial "title/header" . }}
-    </header>
-    <main class="mx-auto mb-auto flex h-auto w-xl flex-col">
-      {{ block "main" . }}{{ end }}
-    </main>
-
+    {{ partial "title/header" . }}
+    <main>{{ block "main" . }}{{ end }}</main>
     {{ partial "footer" . }}
-
     {{ partial "assets/js" . }}
     {{ partial "debug" . }}
   </body>
