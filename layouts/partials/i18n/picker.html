@@ -1,23 +1,23 @@
 <details data-pagefind-ignore="all">
   <summary>
-    {{ with .Translations }}
-      {{ $.Site.Language.LanguageName }}
-    {{ else }}
-      {{ T "no_translation" }}
-    {{ end }}
+    {{ $.Site.Language.LanguageName }}
   </summary>
   <ul>
     {{ range .Translations }}
       <li>
         <a href="{{ .RelPermalink }}" hreflang="{{ .Language.LanguageCode }}">
-          {{ .Language.LanguageName }}</a
-        >
+          {{ .Language.LanguageName }}
+        </a>
+      </li>
+    {{ else }}
+      <li>
+        {{ T "no_translation" }}
       </li>
     {{ end }}
     <li>
-      <a href="{{ partial "i18n/link" "contributing" }}"
-        >{{ T "contribute" }}</a
-      >
+      <a href="{{ partial "i18n/link" "contributing" }}">
+        {{ T "contribute" |title }}
+      </a>
     </li>
   </ul>
 </details>
