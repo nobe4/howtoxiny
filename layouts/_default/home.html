@@ -4,12 +4,16 @@
   </section>
 
   <section>
-    <a href="{{ partial "i18n/link" "contributing" }}">
-      {{ T "contribute" | title }}
-    </a>
-    &nbsp;
-    <a href="{{ partial "i18n/link" "glossary" }}">
-      {{ T "glossary" | title }}
-    </a>
+    <ul class="inline">
+      <li>
+        {{ partial "i18n/link" "about" }}
+      </li>
+      <li>
+        {{ partial "i18n/link" "contributing" }}
+      </li>
+      <li>
+        {{ partial "i18n/link" "glossary" }}
+      </li>
+    </ul>
   </section>
 {{ end }}

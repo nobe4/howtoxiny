@@ -1,5 +1,11 @@
-{{- with site.GetPage . -}}
-  {{- .RelPermalink -}}
-{{- else -}}
-  {{- (site.Sites.Default.GetPage .).RelPermalink -}}
-{{- end -}}
+{{ $page := site.GetPage . }}
+
+{{ if not $page }}
+  {{ $page = site.Sites.Default.GetPage . }}
+{{ end }}
+
+{{ with $page }}
+  <a href="{{ .RelPermalink }}">
+    {{ .Title | title }}
+  </a>
+{{ end }}
