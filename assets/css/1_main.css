@@ -170,3 +170,9 @@ body.home main > * {
 
   justify-content: space-between;
 }
+
+ul.x-list li ul {
+  display: flex;
+  gap: calc(0.2 * var(--size-base));
+  list-style-type: none;
+}
