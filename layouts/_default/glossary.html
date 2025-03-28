@@ -1,0 +1,23 @@
+{{ define "main" }}
+  <h2>List</h2>
+
+  {{ range .Pages }}
+    <details>
+      <summary>
+        <code>{{ .Title }}</code>:
+        {{ .Params.description }}
+      </summary>
+      {{ .Content }}
+      {{ with .Params.references }}
+        <p>References:</p>
+        <ul>
+          {{ range . }}
+            <li>{{ . }}</li>
+          {{ end }}
+        </ul>
+      {{ end }}
+    </details>
+  {{ end }}
+
+  {{ partial "content" . }}
+{{ end }}
