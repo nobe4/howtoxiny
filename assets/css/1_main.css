@@ -185,3 +185,7 @@ body.home main > * {
 
   justify-content: space-between;
 }
+
+.aka {
+  display: none;
+}
