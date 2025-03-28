@@ -120,6 +120,10 @@ pre {
   overflow-x: auto;
 }
 
+pre > code {
+  padding: 0;
+}
+
 /* specific */
 
 nav {
