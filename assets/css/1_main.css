@@ -15,12 +15,6 @@
   --border: var(--size-border) solid var(--color-fg);
 }
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
 html {
   height: 100%;
 
@@ -29,6 +23,8 @@ html {
 
 body {
   height: 100%;
+  max-width: calc(70 * var(--size-base));
+  margin-inline: auto;
 
   font-size: calc(2 * var(--size-base));
   padding: calc(2 * var(--size-base));
@@ -95,10 +91,20 @@ h3 {
   margin-bottom: calc(2 * var(--size-base));
 }
 
+code,
+pre {
+  background-color: var(--color-pre-bg);
+  border-radius: var(--size-radius);
+}
+
+code {
+  padding: calc(0.5 * var(--size-base)) calc(1 * var(--size-base));
+  vertical-align: middle;
+}
+
 pre {
   padding: calc(0.5 * var(--size-base)) calc(1 * var(--size-base));
   margin: calc(0.5 * var(--size-base)) 0;
-  border-radius: var(--size-radius);
   background-color: var(--color-pre-bg);
   overflow-x: auto;
 }
@@ -166,7 +172,7 @@ body.home main > * {
 #search-input {
   width: 100%;
   font-size: calc(3 * var(--size-base));
-  padding: calc(0.5 * var(--size-base));
+  padding: calc(0.5 * var(--size-base)) calc(1 * var(--size-base));
 
   background-color: var(--color-pre-bg);
   color: var(--color-fg);
