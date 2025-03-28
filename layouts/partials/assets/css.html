@@ -1,4 +1,4 @@
-{{ with resources.Get "css/main.css" }}
+{{ with resources.Match "css/**.css" | resources.Concat "css/main.css" }}
   {{ if hugo.IsProduction }}
     {{ with . | minify | fingerprint }}
       <link
