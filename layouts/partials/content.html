@@ -1,19 +1,4 @@
-<div class="aka">
-  {{ $x := (index (.GetTerms "x") 0) }}
-  {{ range $x.Params.aka }}
-    <span>{{ . }}</span>
-  {{ end }}
+{{ partial "aka" . }}
 
-  {{ $y := (index (.GetTerms "y") 0) }}
-  {{ range $y.Params.aka }}
-    <span>{{ . }}</span>
-  {{ end }}
 
-  {{ range .Params.aka }}
-    <span>{{ . }}</span>
-  {{ end }}
-</div>
-
-<article>
-  {{ .Content }}
-</article>
+<article>{{ .Content }}</article>
