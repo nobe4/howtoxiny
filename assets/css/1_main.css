@@ -87,7 +87,14 @@ ul.inline {
   list-style-type: none;
 }
 
+details {
+  margin-bottom: var(--size-base);
+}
+details > * {
+  margin-left: var(--size-base);
+}
 details summary {
+  margin-left: 0;
   text-decoration: underline;
   cursor: pointer;
 }
