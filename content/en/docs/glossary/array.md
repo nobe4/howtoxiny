@@ -14,7 +14,7 @@ Examples:
 
 - ```go
   days = []string{"Monday", "Tuesday", "Wednesday"}
-  ````
+  ```
 
 Rational:
 
