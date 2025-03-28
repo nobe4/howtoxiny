@@ -1,9 +1,10 @@
 home_title = "How to {{ .x }} in {{ .y }}"
 
-contribute = "Contribute"
-glossary = "Glossary"
+contribute = "contribute"
+glossary = "glossary"
+search = "search"
 
-translations = "Translations"
-no_translation = "No translation"
+translations = "translations"
+no_translation = "no translation"
 in_language = "in"
 
