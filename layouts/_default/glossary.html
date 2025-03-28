@@ -1,0 +1,31 @@
+{{ define "main" }}
+  <h2>Introduction</h2>
+  <p>
+    In order to make the content consistent and searchable, here are a list of
+    words to use. See Details for more.
+  </p>
+
+  <h2>List</h2>
+
+  {{ range .Pages }}
+    <details>
+      <summary>
+        <code>{{ .Title }}</code>:
+        {{ .Params.description }}
+      </summary>
+
+      {{ .Content }}
+
+      {{ with .Params.references }}
+        <p>References:</p>
+        <ul>
+          {{ range . }}
+            <li><a href="{{ . }}">{{ . }}</a></li>
+          {{ end }}
+        </ul>
+      {{ end }}
+    </details>
+  {{ end }}
+
+  {{ partial "content" . }}
+{{ end }}

@@ -55,6 +55,14 @@ body > * {
   margin-inline: auto;
 }
 
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: var(--size-base);
+}
+
 em {
   color: var(--color-em-accent);
 }
@@ -79,7 +87,14 @@ ul.inline {
   list-style-type: none;
 }
 
+details {
+  margin-bottom: var(--size-base);
+}
+details > * {
+  margin-left: var(--size-base);
+}
 details summary {
+  margin-left: 0;
   text-decoration: underline;
   cursor: pointer;
 }
@@ -111,7 +126,7 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: var(--size-base);
+  margin-bottom: calc(2 * var(--size-base));
 }
 
 nav svg {
@@ -133,7 +148,7 @@ nav details ul {
 }
 
 footer {
-  margin-top: var(--size-base);
+  margin-top: calc(2 * var(--size-base));
 }
 
 body main {

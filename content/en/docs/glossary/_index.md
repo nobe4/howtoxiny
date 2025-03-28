@@ -1,8 +1,9 @@
 +++
 title = "glossary"
+layout = "glossary"
 +++
 
-## Introduction
+## Details
 
 All programing languages use different words for different concept.
 E.g. `list`/`array`, `package`/`module`, etc.
@@ -46,50 +47,3 @@ Examples:
 
 TODO: in the event of the word being an important distinction, exceptions can be
 made.
-
-## The glossary
-
-- `array`: an ordered sequence of element
-
-  Examples:
-
-  - ```python
-    days = ["Monday", "Tuesday", "Wednesday"]
-    ```
-
-  - ```go
-    days = []string{"Monday", "Tuesday", "Wednesday"}
-    ```
-
-  Rational:
-
-  - Preferred over `list` because it is also a verb.
-  - Preferred over `slice` because in many languages it means "cutting an array."
-
-  References:
-
-  - https://en.wikipedia.org/wiki/Array_(data_structure)
-
-- `dict`: an unordered collection of key, value pairs
-
-  Shortened form of `dictionary`.
-
-  Examples:
-
-  - ```python
-    albums = { "Nirvana": "Nevermind", "AC/DC": "Back In Black" }
-    ```
-
-  - ```go
-    albums = map[string]string{ "Nirvana": "Nevermind", "AC/DC": "Back In Black" }
-    ```
-
-  Rational:
-
-  - Preferred over `map` because it is also a verb.
-  - Preferred over `hash` because it is also a verb and a cryptographic
-    operation.
-
-  References:
-
-  - https://en.wikipedia.org/wiki/Associative_array

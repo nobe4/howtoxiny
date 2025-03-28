@@ -6,7 +6,6 @@ enableGitInfo = true
 defaultContentLanguage = "en"
 defaultContentLanguageInSubdir = true
 enableMissingTranslationPlaceholders = true
-disableKinds = ["section"]
 
 [params]
 repo = "https://github.com/nobe4/howtoxiny"
