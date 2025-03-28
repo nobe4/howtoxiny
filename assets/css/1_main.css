@@ -73,6 +73,12 @@ ul {
   padding-left: var(--size-base);
 }
 
+ul.inline {
+  padding-left: 0;
+  display: flex;
+  list-style-type: none;
+}
+
 details summary {
   text-decoration: underline;
   cursor: pointer;
@@ -149,6 +155,11 @@ body.home main > * {
   display: flex;
 }
 
+body.home ul.inline {
+  width: 100%;
+  justify-content: space-between;
+}
+
 #search {
   display: flex;
   flex-direction: column;
@@ -171,8 +182,6 @@ body.home main > * {
   justify-content: space-between;
 }
 
-ul.x-list li ul {
-  display: flex;
+ul.x-list ul.inline {
   gap: calc(0.2 * var(--size-base));
-  list-style-type: none;
 }

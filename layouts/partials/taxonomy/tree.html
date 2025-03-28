@@ -13,7 +13,7 @@
         <a href="{{ .Page.RelPermalink }}">
           {{ .Page.Title }}
         </a>
-        <ul>
+        <ul class="{{ if eq $t1 "x" }}inline{{ end }}">
           {{ range $taxonomy.Pages }}
             <li>
               <a href="{{ .RelPermalink }}">
