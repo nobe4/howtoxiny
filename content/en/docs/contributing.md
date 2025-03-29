@@ -9,6 +9,14 @@ title = "contributing"
 - you swear to have ownership over the content and are able to share it under the
   aforementioned license;
 
+## What to contribute
+
+There are many things to contribute here, here's an exhaustive list:
+
+- Add, update, translate `X`
+- Add, update, translate `Y`
+
+
 ## Guidelines
 
-TODO
+There are

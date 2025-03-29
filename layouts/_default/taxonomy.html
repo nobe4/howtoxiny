@@ -1,5 +1,9 @@
 {{ define "main" }}
-  {{ partial "content" . }}
+  <p>
+    See
+    {{ partial "i18n/link" (dict "path" "docs/glossary" "anchor" .Data.Plural) }}.
+  </p>
 
+  {{ partial "content" . }}
   {{ partial "taxonomy/tree" (dict "context" . "root" .Data.Plural) }}
 {{ end }}
