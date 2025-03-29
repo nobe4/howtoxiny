@@ -1,0 +1,4 @@
+{{ $path := .Get "path" }}
+{{ $anchor := or (.Get "anchor") "" }}
+
+{{ partial "i18n/link" (dict "path" $path "anchor" $anchor) }}

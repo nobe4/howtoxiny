@@ -1,11 +1,18 @@
-{{ $page := site.GetPage . }}
+{{ $page := site.GetPage .path }}
+{{ $anchor := .anchor }}
 
 {{ if not $page }}
-  {{ $page = site.Sites.Default.GetPage . }}
+  {{ $page = site.Sites.Default.GetPage .path }}
 {{ end }}
 
 {{ with $page }}
-  <a href="{{ .RelPermalink }}">
+  <a
+    href="
+    {{- .RelPermalink -}}
+    {{- with $anchor -}}#{{ . }}{{- end -}}
+    "
+  >
     {{ .Title | title }}
+    {{- with $anchor -}}#{{ . }}{{- end -}}
   </a>
 {{ end }}
