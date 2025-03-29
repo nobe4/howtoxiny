@@ -16,7 +16,6 @@ There are many things to contribute here, here's an exhaustive list:
 - Add, update, translate `X`
 - Add, update, translate `Y`
 
-
 ## Guidelines
 
 There are
