@@ -60,7 +60,13 @@ h3,
 h4,
 h5,
 h6 {
-  margin-top: var(--size-base);
+  margin-top: calc(0.5 * var(--size-base));
+}
+
+blockquote {
+  border-left: calc(2 * var(--size-border)) solid var(--color-fg);
+  padding: calc(0.2 * var(--size-base)) calc(0.5 * var(--size-base));
+  background-color: var(--color-pre-bg);
 }
 
 em {
