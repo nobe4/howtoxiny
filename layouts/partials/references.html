@@ -1,0 +1,10 @@
+{{ with .Params.references }}
+  <h2>{{ T "references" | title }}</h2>
+  <ul>
+    {{ range . }}
+      <li>
+        <a href="{{ . }}"> {{ . }} </a>
+      </li>
+    {{ end }}
+  </ul>
+{{ end }}

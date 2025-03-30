@@ -1,19 +1,24 @@
 {{ define "main" }}
   {{ partial "content" . }}
 
+  {{ $tax := "x" }}
+  {{ if eq .Data.Plural "x" }}
+    {{ $tax = "y" }}
+  {{ end }}
 
-  <ul data-pagefind-ignore="all">
-    {{ $tax := "x" }}
-    {{ if eq .Data.Plural "x" }}
-      {{ $tax = "y" }}
-    {{ end }}
-
-    {{ range .Pages }}
-      <li>
-        <a href="{{ .Page.RelPermalink }}">
-          {{ partial "taxonomy/title" (dict "context" . "taxonomy" $tax) }}
-        </a>
-      </li>
-    {{ end }}
-  </ul>
+  {{ with .Pages }}
+    <h2>{{ T "examples" | title }}</h2>
+    <ul data-pagefind-ignore="all">
+      {{ range . }}
+        <li>
+          <a href="{{ .Page.RelPermalink }}">
+            {{ partial "taxonomy/title" (dict "context" . "taxonomy" $tax) }}
+          </a>
+        </li>
+      {{ end }}
+    </ul>
+  {{ else }}
+    {{ T "no example" }},
+    {{ partial "i18n/link" (dict "path" "contributing" ) }}.
+  {{ end }}
 {{ end }}

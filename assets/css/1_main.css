@@ -1,7 +1,7 @@
 :root {
   --color-black: #1d1f21;
+  --color-gray: #2d3031;
   --color-white: #c5c8c6;
-  --color-pre-bg: #2d3031;
   --color-accent: #859abc;
   --color-em-accent: #7c9e9b;
   --color-strong-accent: #93b6a4;
@@ -66,7 +66,7 @@ h6 {
 blockquote {
   border-left: calc(2 * var(--size-border)) solid var(--color-fg);
   padding: calc(0.2 * var(--size-base)) calc(0.5 * var(--size-base));
-  background-color: var(--color-pre-bg);
+  background-color: var(--color-gray);
 }
 
 em {
@@ -110,7 +110,7 @@ details summary:hover {
 
 code,
 pre {
-  background-color: var(--color-pre-bg);
+  background-color: var(--color-gray);
   border-radius: var(--size-radius);
 }
 
@@ -122,7 +122,7 @@ code {
 pre {
   padding: calc(0.2 * var(--size-base)) calc(0.5 * var(--size-base));
   margin: calc(0.5 * var(--size-base)) 0;
-  background-color: var(--color-pre-bg);
+  background-color: var(--color-gray);
   overflow-x: auto;
 }
 
@@ -195,7 +195,7 @@ body.home ul.inline {
   width: 100%;
   padding: calc(0.2 * var(--size-base)) calc(0.5 * var(--size-base));
 
-  background-color: var(--color-pre-bg);
+  background-color: var(--color-gray);
   color: var(--color-fg);
   border: var(--border);
   border-radius: var(--size-radius);
@@ -209,4 +209,13 @@ body.home ul.inline {
 
 ul.x-list ul.inline {
   gap: calc(0.2 * var(--size-base));
+}
+
+aside.note {
+  border-left: calc(2 * var(--size-border)) solid var(--color-accent);
+  padding-left: calc(0.5 * var(--size-base));
+}
+
+aside.note header {
+  color: var(--color-accent);
 }
