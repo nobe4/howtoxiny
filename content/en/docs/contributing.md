@@ -19,6 +19,7 @@ There are many things to contribute here, here is a non exhaustive list:
 - Fix typo
 - Improve code
 - Improve prose
+- Fix any of the `TODO`
 
 ## Guidelines
 
@@ -44,12 +45,14 @@ Adding a new `X` involves:
    The definition must always be added _first_ in the `en` language. This is
    how linking with other languages work. See {{< glossary "cascade" >}}.
 
+   The file path should follow [Hugo's taxonomy doc](https://gohugo.io/content-management/taxonomies/#add-custom-metadata-to-a-taxonomy-or-term).
+
    {{< details summary="Example" >}}
 
 <!-- find how to include the real content of a file -->
 <!-- prettier-ignore -->
 ```markdown
-# content/en/string_prefix_match/_index.md
+# content/en/x/string_prefix_match/_index.md
 +++
 title = "match a string prefix"
 aka = [

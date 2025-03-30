@@ -5,7 +5,7 @@
   {{ if and $x $y }}
     {{ with $x }}
       <a href="{{ .RelPermalink }}">
-        {{ .Title }}
+        {{ .Title | title }}
       </a>
     {{ end }}
 

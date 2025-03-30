@@ -1,8 +1,23 @@
 home_title = "How to {{ .x }} in {{ .y }}"
 
 search = "search"
-
-translations = "translations"
-no_translation = "no translation"
 in_language = "in"
 
+# TODO: redo translations with plural following https://gohugo.io/functions/lang/translate/#translations-with-pluralization
+# [translation]
+#   zero = "translation"
+#   one = "translation"
+#   other = "translation"
+# [translation_with_count]
+#   zero = "no translation"
+#   one = "one translation"
+#   other = "{{ . }} translation"
+translations = "translations"
+no_translation = "no translation"
+
+examples = "examples"
+no_example = "no example"
+
+references = "references"
+
+note = "note"
