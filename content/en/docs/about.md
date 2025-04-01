@@ -28,49 +28,48 @@ code patterns.
 
 - a language overview
 
-    [Learn X in Y minutes][learnxinyminutes] is the place to go for that.
+  [Learn X in Y minutes][learnxinyminutes] is the place to go for that.
 
 - a replacement for blogging
 
-    Blogging is a great way to share ideas, connect, express oneself. This site
-    focus on code examples, without any personal attachment to the authors.
+  Blogging is a great way to share ideas, connect, express oneself. This site
+  focus on code examples, without any personal attachment to the authors.
 
 - a replacement for online forums
 
-    Online Q/A, debugging strive to push the community forward and this site
-    wants to acknowledge the heros that are random online contributors. This
-    site doesn't pretend to be a place where you can discuss and ask questions
-    It is however welcomed to contribute and to improve the content here.
+  Online Q/A, debugging strive to push the community forward and this site
+  wants to acknowledge the heros that are random online contributors. This
+  site doesn't pretend to be a place where you can discuss and ask questions
+  It is however welcomed to contribute and to improve the content here.
 
 ## What this site is trying to be
 
 - a compilation of idiomatic examples
 
-    Writing in Go is different that writing in Python.
+  Writing in Go is different that writing in Python.
 
-    Both languages have `loops`, `ifs`, and other usual syntax elements.
+  Both languages have `loops`, `ifs`, and other usual syntax elements.
 
-    However, "writing a web server" is very different in both languages. Each have
-    their own best practices, idiomatic patterns, libraries, etc.
+  However, "writing a web server" is very different in both languages. Each have
+  their own best practices, idiomatic patterns, libraries, etc.
 
 - a standardized library
 
-    The examples should differ only in the syntactical elements of the
-    languages.
+  The examples should differ only in the syntactical elements of the
+  languages.
 
-    "Writing a web server" should have the same values across each languages, so
-    the understanding of one or the other is simplified.
+  "Writing a web server" should have the same values across each languages, so
+  the understanding of one or the other is simplified.
 
 - a community effort
 
-    This is a place by and for the other developers. Contributions are most
-    welcomed and any aspect of the website's design and content is subject to
-    improvements.
+  This is a place by and for the other developers. Contributions are most
+  welcomed and any aspect of the website's design and content is subject to
+  improvements.
 
 - standing on the shoulder of the internet
 
-    This site is not going to invent new ways of coding, and
-    inspirations/sources ought to be cited anytime necessary.
-
+  This site is not going to invent new ways of coding, and
+  inspirations/sources ought to be cited anytime necessary.
 
 [learnxinyminutes]: https://learnxinyminutes.com
