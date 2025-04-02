@@ -1,0 +1,34 @@
+{{ $context := .context }}
+{{ $links := .links }}
+
+{{ $x := (index ($context.GetTerms "x") 0) }}
+{{ $y := (index ($context.GetTerms "y") 0) }}
+
+{{ if and $x $y }}
+  {{ with $x }}
+    {{ $title := .Title | title }}
+    {{ if $links }}
+      <a href="{{ .RelPermalink }}">
+        {{ $title }}
+      </a>
+    {{ else }}
+      {{ $title }}
+    {{ end }}
+
+  {{ end }}
+
+  {{ T "in_language" }}
+
+  {{ with $y }}
+    {{ $title := .Title | title }}
+    {{ if $links }}
+      <a href="{{ .RelPermalink }}">
+        {{ $title }}
+      </a>
+    {{ else }}
+      {{ $title }}
+    {{ end }}
+  {{ end }}
+{{ else }}
+  {{ $context.Title | title }}
+{{ end }}
