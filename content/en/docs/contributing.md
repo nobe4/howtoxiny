@@ -15,6 +15,7 @@ There are many things to contribute here, here is a non exhaustive list:
 
 - Add, update, translate `X`
 - Add, update, translate `Y`
+- Add, update, translate `X in Y`
 - Add missing translation
 - Fix typo
 - Improve code
@@ -23,7 +24,7 @@ There are many things to contribute here, here is a non exhaustive list:
 
 ## Guidelines
 
-### `X`
+### Contributing `X`
 
 `X`s are simple tasks to perform, they must do one thing and one thing only.
 
@@ -34,97 +35,95 @@ three `X`s:
 - `sort an array`
 - `match a string prefix`
 
-Adding a new `X` involves:
 
-1. Writing its definition
+Adding a new `X` means writing its definition.
 
-   The definition gives the `X` its title, file pattern, {{< glossary "aka" >}}.
+The definition gives the `X` its title, file pattern, {{< glossary "aka" >}}.
 
-   See [examples](https://github.com/nobe4/howtoxiny/tree/main/content/en/x).
+See [examples](https://github.com/nobe4/howtoxiny/tree/main/content/en/x).
 
-   The definition must always be added _first_ in the `en` language. This is
-   how linking with other languages work. See {{< glossary "cascade" >}}.
+The definition must always be added _first_ in the `en` language. This is
+how linking with other languages work. See {{< glossary "cascade" >}}.
 
-   The file path should follow [Hugo's taxonomy doc](https://gohugo.io/content-management/taxonomies/#add-custom-metadata-to-a-taxonomy-or-term).
+The file path should follow [Hugo's taxonomy doc](https://gohugo.io/content-management/taxonomies/#add-custom-metadata-to-a-taxonomy-or-term).
 
-   {{< details summary="Example" >}}
 
-<!-- find how to include the real content of a file -->
-<!-- prettier-ignore -->
-```markdown
-# content/en/x/string_prefix_match/_index.md
-+++
-title = "match a string prefix"
-aka = [
-  "match the string first part",
-  "match the string start",
-  "match the prefix of a string",
-  "match the start of a string",
-]
-+++
-...
-```
+- `file pattern`
 
-    {{< /details >}}
+  ```
+  <what>_[what_]+<action>
+  ```
 
-    - `file pattern`
+  The `what`s go from most general, to less general.
 
-      ```
-      <what>_[what_]+<action>
-      ```
+  Examples:
 
-      The `what`s go from most general, to less general.
+  - ✅ `string_prefix_match`
+  - ❌ `match_string_prefix`
+  - ❌ `string_prefix_match`
 
-      Examples:
+  The logic here is to have common _types_ in nearby files.
+  This doesn't impact how it renders, this is purely file organization.
 
-      - ✅ `string_prefix_match`
-      - ❌ `match_string_prefix`
-      - ❌ `string_prefix_match`
+- `title`
 
-      The logic here is to have common _types_ in nearby files.
-      This won't impact how it will render, this is purely file organization.
+  Those are displayed to the user, and must be matching the following sentence:
 
-    - `title`
+  ```
+  In order to <title>, I must ...
+  ```
 
-      Those will be displayed, and they must be inserted in the following
-      sentence:
+  The title must not start with an uppercase letter.
 
-      ```
-      In order to <title>, I will ...
-      ```
+  Examples:
 
-      The title must not start with an uppercase letter.
+  - ✅ `match a string prefix`
+  - ❌ `to match the prefix of a string`
+  - ❌ `How to match the string prefix`
 
-      Examples:
+- `aka`
 
-      - ✅ `match a string prefix`
-      - ❌ `to match the prefix of a string`
-      - ❌ `How to match the string prefix`
+  They should follow the same rules as `title`, but can be more free in
+  their writing.
 
-    - `aka`
+- `content`
 
-      They should follow the same rules as `title`, but can be more free in
-      their writing.
+  The content gives additional details on the `X`. Its usefulness, its
+  edge-cases, etc.
 
-    - `content`
+  It must also set the _fixed parameters_ for the examples. This ensures
+  that all code have a limited amount of differences.
 
-      The content gives additional details on the `X`. Its usefulness, its
-      edge-cases, etc.
+  Example:
 
-      It must also set the _fixed parameters_ for the examples. This ensures
-      that all code have a limited amount of differences.
+  ```markdown
+  Matching a string prefix means checking if the string starts by a
+  specified content.
 
-      Example:
+  Examples:
 
-      ```markdown
-      Matching a string prefix means checking if the string starts by a
-      specified content.
+  - `a great day` start with `a great`
+  - `a pretty night` does not start with `a great`
+  ```
 
-      Examples:
-      - `a great day` start with `a great`
-      - `a pretty night` does not start with `a great`
-      ```
+- `references`
 
-2. Adding examples
+  Additional links that can help set the context and history of an `X`.
+
+### Contributing `Y`
+
+A `Y` is a programming language, a tool, etc.
+
+It must be without external dependencies. For instance, in a programming
+language, consider only the standard library.
+
+If external dependencies are used, they should be _in addition_ to a standard
+library example.
+
+Example: most seach results for "http request python" link to the awesome
+[Requests library](https://requests.readthedocs.io/), but it's possible 
+
+
+### Contributing `X in Y`
 
 TODO
