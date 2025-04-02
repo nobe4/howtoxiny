@@ -9,7 +9,10 @@
     <meta data-pagefind-meta="kind:{{ .Kind }}" />
   {{ end }}
   <title>
-    {{ if not .IsHome }}{{ partial "title/text" . }} |{{ end }}
+    {{ if not .IsHome }}
+      {{ partial "title/text" (dict "context" . "links" false) }}
+      |
+    {{ end }}
     {{ site.Title }}
   </title>
   {{ partialCached "assets/favicon" . }}

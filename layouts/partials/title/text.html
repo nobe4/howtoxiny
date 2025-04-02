@@ -1,34 +1,52 @@
-{{ if eq .Kind "page" }}
-  {{ $x := (index (.GetTerms "x") 0) }}
-  {{ $y := (index (.GetTerms "y") 0) }}
+{{ $context := .context }}
+{{ $links := .links }}
+
+{{ if eq $context.Kind "page" }}
+  {{ $x := (index ($context.GetTerms "x") 0) }}
+  {{ $y := (index ($context.GetTerms "y") 0) }}
 
   {{ if and $x $y }}
     {{ with $x }}
-      <a href="{{ .RelPermalink }}">
-        {{ .Title | title }}
-      </a>
+      {{ $title := .Title | title }}
+      {{ if $links }}
+        <a href="{{ .RelPermalink }}">
+          {{ $title }}
+        </a>
+      {{ else }}
+        {{ $title }}
+      {{ end }}
+
     {{ end }}
 
     {{ T "in_language" }}
 
     {{ with $y }}
-      <a href="{{ .RelPermalink }}">
-        {{ .Title }}
-      </a>
+      {{ $title := .Title | title }}
+      {{ if $links }}
+        <a href="{{ .RelPermalink }}">
+          {{ $title }}
+        </a>
+      {{ else }}
+        {{ $title }}
+      {{ end }}
     {{ end }}
   {{ else }}
     {{ .Title | title }}
   {{ end }}
 
-{{ else if eq .Kind "home" }}
-  {{ $tmpl :="<a href=\"%s\">%s</a>" }}
+{{ else if eq $context.Kind "home" }}
+  {{ $tmpl := "%s" }}
+  {{ if $links }}
+    {{ $tmpl = "<a href=\"%s\">%s</a>" }}
+  {{ end }}
+
   {{ T "home_title" ( dict
-    "x" (printf $tmpl (.RelRef (dict "path" "x")) "X")
-    "y" (printf $tmpl (.RelRef (dict "path" "y")) "Y")
+    "x" (printf $tmpl ($context.RelRef (dict "path" "x")) "X")
+    "y" (printf $tmpl ($context.RelRef (dict "path" "y")) "Y")
     ) | safeHTML
   }}
-{{ else if eq .Kind "taxonomy" }}
-  {{ .Data.Plural | title }}
+{{ else if eq $context.Kind "taxonomy" }}
+  {{ $context.Data.Plural | title }}
 {{ else }}
-  {{ .Title | title }}
+  {{ $context.Title | title }}
 {{ end }}
