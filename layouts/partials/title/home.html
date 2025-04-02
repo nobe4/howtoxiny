@@ -1,0 +1,13 @@
+{{ $context := .context }}
+{{ $links := .links }}
+
+{{ if $links }}
+  {{ $tmpl := "<a href=\"%s\">%s</a>" }}
+  {{ T "home_title" ( dict
+    "x" (printf $tmpl ($context.RelRef (dict "path" "x")) "X")
+    "y" (printf $tmpl ($context.RelRef (dict "path" "y")) "Y")
+    ) | safeHTML
+  }}
+{{ else }}
+  {{ T "home_title" ( dict "x" "X" "y" "Y") | safeHTML }}
+{{ end }}

@@ -2,49 +2,9 @@
 {{ $links := .links }}
 
 {{ if eq $context.Kind "page" }}
-  {{ $x := (index ($context.GetTerms "x") 0) }}
-  {{ $y := (index ($context.GetTerms "y") 0) }}
-
-  {{ if and $x $y }}
-    {{ with $x }}
-      {{ $title := .Title | title }}
-      {{ if $links }}
-        <a href="{{ .RelPermalink }}">
-          {{ $title }}
-        </a>
-      {{ else }}
-        {{ $title }}
-      {{ end }}
-
-    {{ end }}
-
-    {{ T "in_language" }}
-
-    {{ with $y }}
-      {{ $title := .Title | title }}
-      {{ if $links }}
-        <a href="{{ .RelPermalink }}">
-          {{ $title }}
-        </a>
-      {{ else }}
-        {{ $title }}
-      {{ end }}
-    {{ end }}
-  {{ else }}
-    {{ .Title | title }}
-  {{ end }}
-
+  {{ partial "title/page" (dict "context" $context "links" $links) }}
 {{ else if eq $context.Kind "home" }}
-  {{ $tmpl := "%s" }}
-  {{ if $links }}
-    {{ $tmpl = "<a href=\"%s\">%s</a>" }}
-  {{ end }}
-
-  {{ T "home_title" ( dict
-    "x" (printf $tmpl ($context.RelRef (dict "path" "x")) "X")
-    "y" (printf $tmpl ($context.RelRef (dict "path" "y")) "Y")
-    ) | safeHTML
-  }}
+  {{ partial "title/home" (dict "context" $context "links" $links) }}
 {{ else if eq $context.Kind "taxonomy" }}
   {{ $context.Data.Plural | title }}
 {{ else }}
