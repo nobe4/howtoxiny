@@ -35,7 +35,6 @@ three `X`s:
 - `sort an array`
 - `match a string prefix`
 
-
 Adding a new `X` means writing its definition.
 
 The definition gives the `X` its title, file pattern, {{< glossary "aka" >}}.
@@ -46,7 +45,6 @@ The definition must always be added _first_ in the `en` language. This is
 how linking with other languages work. See {{< glossary "cascade" >}}.
 
 The file path should follow [Hugo's taxonomy doc](https://gohugo.io/content-management/taxonomies/#add-custom-metadata-to-a-taxonomy-or-term).
-
 
 - `file pattern`
 
@@ -121,8 +119,7 @@ If external dependencies are used, they should be _in addition_ to a standard
 library example.
 
 Example: most seach results for "http request python" link to the awesome
-[Requests library](https://requests.readthedocs.io/), but it's possible 
-
+[Requests library](https://requests.readthedocs.io/), but it's possible
 
 ### Contributing `X in Y`
 
