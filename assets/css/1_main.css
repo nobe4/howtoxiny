@@ -151,10 +151,19 @@ nav a:nth-child(1):hover svg path {
   fill: var(--color-accent);
 }
 
+nav details {
+  flex: 1;
+  margin-bottom: 0;
+  text-align: right;
+  position: relative;
+}
+
 nav details ul {
   position: absolute;
   list-style-type: none;
   padding-left: 0;
+  margin-left: 0;
+  right: 0;
 }
 
 footer {
