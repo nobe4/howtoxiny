@@ -1,5 +1,5 @@
 <header>
   <h1>
-    {{ partial "title/text" . }}
+    {{ partial "title/text" (dict "context" . "links" true) }}
   </h1>
 </header>
