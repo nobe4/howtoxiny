@@ -1,15 +1,18 @@
-<div hidden>
-  {{ $x := (index (.GetTerms "x") 0) }}
-  {{ range $x.Params.aka }}
-    <span>{{ . }}</span>
-  {{ end }}
+<details>
+  <summary>aka</summary>
+  <ul>
+    {{ $x := (index (.GetTerms "x") 0) }}
+    {{ range $x.Params.aka }}
+      <li>{{ . }}</li>
+    {{ end }}
 
-  {{ $y := (index (.GetTerms "y") 0) }}
-  {{ range $y.Params.aka }}
-    <span>{{ . }}</span>
-  {{ end }}
+    {{ $y := (index (.GetTerms "y") 0) }}
+    {{ range $y.Params.aka }}
+      <li>{{ . }}</li>
+    {{ end }}
 
-  {{ range .Params.aka }}
-    <span>{{ . }}</span>
-  {{ end }}
-</div>
+    {{ range .Params.aka }}
+      <li>{{ . }}</li>
+    {{ end }}
+  </ul>
+</details>
