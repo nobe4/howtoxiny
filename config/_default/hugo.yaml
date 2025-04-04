@@ -1,31 +1,37 @@
 cascade:
-  - params:
-      "y": ["curl"]
-    target:
+  # ignore any glossary subpage, as they are listed in the glossary index.
+  - target:
+      path: "**/docs/glossary/**"
+      kind: page
+    build:
+      render: never
+  - target:
       path: "**/curl/**"
       kind: page
-  - params:
-      "y": ["go"]
-    target:
+    params:
+      "y": ["curl"]
+  - target:
       path: "**/go/**"
       kind: page
-  - params:
-      "y": ["python"]
-    target:
+    params:
+      "y": ["go"]
+  - target:
       path: "**/python/**"
       kind: page
-  - params:
-      "x": ["array_reverse"]
-    target:
+    params:
+      "y": ["python"]
+  - target:
       path: "**/array_reverse"
       kind: page
-  - params:
-      "x": ["http_request_get"]
-    target:
+    params:
+      "x": ["array_reverse"]
+  - target:
       path: "**/http_request_get"
       kind: page
-  - params:
-      "x": ["string_prefix_match"]
-    target:
+    params:
+      "x": ["http_request_get"]
+  - target:
       path: "**/string_prefix_match"
       kind: page
+    params:
+      "x": ["string_prefix_match"]
