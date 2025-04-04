@@ -17,6 +17,12 @@ OUT="./config/_default/hugo.yaml"
 
 cat > "$OUT" <<- EOF
 cascade:
+  # ignore any glossary subpage, as they are listed in the glossary index.
+  - target:
+      path: "**/docs/glossary/**"
+      kind: page
+    build:
+      render: never
 EOF
 
 find content/en/y/ -mindepth 1 -type d -print0 \
@@ -24,11 +30,11 @@ find content/en/y/ -mindepth 1 -type d -print0 \
     | while IFS= read -r -d '' f; do
         f=$(basename "$f")
         cat >> "$OUT" <<- EOF
-  - params:
-      "y": ["$f"]
-    target:
+  - target:
       path: "**/$f/**"
       kind: page
+    params:
+      "y": ["$f"]
 EOF
     done
 
@@ -37,10 +43,10 @@ find content/en/x/ -mindepth 1 -type d -print0 \
     | while IFS= read -r -d '' f; do
         f=$(basename "$f")
         cat >> "$OUT" <<- EOF
-  - params:
-      "x": ["$f"]
-    target:
+  - target:
       path: "**/$f"
       kind: page
+    params:
+      "x": ["$f"]
 EOF
     done
