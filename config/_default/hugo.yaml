@@ -8,6 +8,11 @@ cascade:
     build:
       render: never
   - target:
+      path: "**/bash/**"
+      kind: page
+    params:
+      "y": ["bash"]
+  - target:
       path: "**/curl/**"
       kind: page
     params:
@@ -37,6 +42,11 @@ cascade:
       kind: page
     params:
       "x": ["http_request_post"]
+  - target:
+      path: "**/range_iterate"
+      kind: page
+    params:
+      "x": ["range_iterate"]
   - target:
       path: "**/string_prefix_match"
       kind: page
